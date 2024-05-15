@@ -48,6 +48,7 @@ class User extends Authenticatable
         'phone',
         'company',
         'address',
+        'organization',
         'day_left',
         'house_id',
         'Vat',
