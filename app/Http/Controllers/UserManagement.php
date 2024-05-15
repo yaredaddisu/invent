@@ -59,15 +59,13 @@ class UserManagement extends Controller
 
 
    if ($user->is_super_admin) {
-    $data = User::with('house')
+    $data = User::query( )
     ->where(function($query) use ($search){
         $query->where('name', 'LIKE', '%'.$search.'%')
                ->orWhere('email', 'LIKE', '%'.$search.'%')
                ->orWhere('phone', 'LIKE', '%'.$search.'%')
-               ->orWhere('id', 'LIKE', '%'.$search.'%')
-               ->orWhereHas('house', function($query) use ($search) {
-                $query->where('name','LIKE', '%'.$search.'%');
-            });
+               ->orWhere('id', 'LIKE', '%'.$search.'%');
+
 
 
     })
@@ -77,16 +75,14 @@ class UserManagement extends Controller
 
 
   } else if($user->is_admin) {
-        $data = User::with('house')
+    $data = User::query( )
         ->where('is_super_admin', 0)
        ->where(function($query) use ($search){
            $query->where('name', 'LIKE', '%'.$search.'%')
                   ->orWhere('email', 'LIKE', '%'.$search.'%')
                   ->orWhere('phone', 'LIKE', '%'.$search.'%')
-                  ->orWhere('id', 'LIKE', '%'.$search.'%')
-                  ->orWhereHas('house', function($query) use ($search) {
-                   $query->where('name','LIKE', '%'.$search.'%');
-               });
+                  ->orWhere('id', 'LIKE', '%'.$search.'%');
+
 
 
        })
