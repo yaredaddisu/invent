@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
 
             $table->rememberToken();
             //$table->foreignIdFor(Warehouse::class, 'house_id')->onDelete('cascade')->onUpdate('cascade')->nullable();
-            $table->date("day_left");
+            $table->date("day_left")->nullable();
 
             $table->timestamps();
         });
