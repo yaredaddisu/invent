@@ -459,7 +459,7 @@ if (isset($data['previous'])) {
 $validator = Validator::make($data, [
     'user_id'=>'exists:App\Models\User,id',
     'survey_id' => 'exists:App\Models\Survey,id',
-    'house_id'=>'exists:App\Models\Warehouse,id',
+    //'house_id'=>'exists:App\Models\Warehouse,id',
     'creator'=>'required',
     'productName'=>'string',
     'salesPrice'=>'numeric',
@@ -492,7 +492,7 @@ public function update(CartRequest $request)
         $validator = Validator::make($item, [
             'user_id' => 'exists:users,id',
             'survey_id' => 'exists:surveys,id',
-            'house_id' => 'exists:warehouses,id',
+           // 'house_id' => 'exists:warehouses,id',
             'creator' => 'required',
             'productName' => 'string',
             'salesPrice' => 'numeric',
