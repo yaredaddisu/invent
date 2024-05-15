@@ -17,8 +17,8 @@ class Warehouse extends Model
     'capacity',
     'description', ];
 
-    public function users() {
-        return $this->hasMany(User::class);
+    public function user() {
+        return $this->belongsTo(User::class);
     }
  public function purchases() {
         return $this->hasMany(Purchase::class);

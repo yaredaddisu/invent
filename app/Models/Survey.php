@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\StockIn;
 use App\Models\TempBoth;
 use App\Models\User;
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -35,6 +36,7 @@ class Survey extends Model
     {
            return $this->belongsTo(User::class);
     }
+
    public function temps()
    {
        return $this->hasMany(TempBoth::class);
@@ -47,7 +49,7 @@ class Survey extends Model
 
 public function getWarehouseAttribute()
 {
-    return $this->user->house->id;
+    return $this->user->houses;
 }
 public function getCreator()
 {

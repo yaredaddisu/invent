@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Support\Facades\URL;
 use App\Http\Resources\StockInResource;
+use App\Http\Resources\WarehouseResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\URL;
 
 class SurveyResource extends JsonResource
 {
@@ -19,7 +20,11 @@ class SurveyResource extends JsonResource
         return [
             'id' => $this->id,
             'user_id' => $this->user_id,
-            'house_id' => $this->getWarehouseAttribute(),
+            //'house' => $this->user->warehouses->only(['id', 'name']), // Assuming user has one warehouse
+           // 'house_id' => $this->getWarehouseAttribute(),
+            //'house' => $this->user ?  $this->getWarehouseAttribute()   : null,
+            //'houses' => WarehouseResource::collection($this->user->houses), // Assuming HouseResource is the resource for houses
+
             'creator' => $this->getCreator(),
             'productName'=>$this->productName,
             'barCode'=>$this->barCode,

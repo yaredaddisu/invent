@@ -23,8 +23,11 @@ class purchaseResource extends JsonResource
                 'note' => $this->note,
                 'slug' => $this->slug,
                 'user_id' => $this->user_id,
-                'creator' => $this->getCreator(),
-                'warehouse' => $this->getWarehouseAttribute(),
+                //'creator' => $this->user,
+                'creator' => $this->user ?   $this->user->name   : null,
+                'warehouse' => $this->house ?   $this->house->name   : null,
+
+                //'warehouse' => $this->getWarehouseAttribute(),
 
                 //'supplier_id' => $this->supplier_id,
                 'supplier'=>json_decode($this->supplier),

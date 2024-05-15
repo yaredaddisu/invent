@@ -58,8 +58,8 @@ class User extends Authenticatable
 
 
 
-    public function house() {
-        return $this->belongsTo(Warehouse::class, 'house_id');
+    public function houses() {
+        return $this->hasMany(Warehouse::class );
     }
 
     public function profile()

@@ -19,6 +19,7 @@ class Purchase extends Model
     'note',
     'purchases',
     'user_id',
+    'house_id',
     'supplier_id',];
 
 
@@ -36,16 +37,16 @@ class Purchase extends Model
            return $this->belongsTo(User::class);
     }
 
-    public function getCreator()
-    {
-        return $this->user->name;
-    }
+    // public function getCreator()
+    // {
+    //     return $this->user->name;
+    // }
     public function getSupplier()
 {
     return $this->supplier->fullname;
 }
-    public function getWarehouseAttribute()
-{
-    return $this->user->house->name;
-}
+//     public function getWarehouseAttribute()
+// {
+//     return $this->user->house->name;
+// }
 }
