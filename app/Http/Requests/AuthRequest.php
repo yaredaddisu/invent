@@ -31,17 +31,17 @@ class AuthRequest extends FormRequest
             'day_left' => ['required','date'],
             'organization'=> ['required'],
             'password' => [
-                ['required','confirmed'  ],       
+                ['required','confirmed'  ],
                          Password::min(8)
                     ->letters()
-                    ->mixedCase()
+                    //->mixedCase()
                     ->numbers()
                     //->symbols()
                     //->uncompromised()
             ],
         ];
     }
- 
+
 public function messages()
     {
         return [
