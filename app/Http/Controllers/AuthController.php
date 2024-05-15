@@ -78,17 +78,20 @@ class AuthController extends Controller
 
 }
 
-        if (($date2 <= $date1) && ($user->is_admin !== 1) && ($user->is_super_admin !== 1) ) {
-           // $user->notify(new ExpiredNotification($user));
+if (($date2 <= $date1) && ($user->is_admin !== 1) && ($user->is_super_admin !== 1)) {
+    // Expire the user's access
+    $user->day_left = null; // or any value that signifies expiration
+    $user->save();
 
+    // Perform any additional actions if needed, such as sending notifications
 
-                Auth::logout();
-                return response([
-                    'error' => 'Your date Expired',
-                    'id'=>$user->id,
-                ], 403);
+    Auth::logout();
+    return response([
+        'error' => 'Your date has expired',
+        'id' => $user->id,
+    ], 403);
+}
 
-        }
 
   if($user->status == 0) {
             Auth::logout();
