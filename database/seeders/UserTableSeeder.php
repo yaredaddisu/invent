@@ -19,8 +19,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'is_admin'=>'1',
             'is_super_admin'=>'1',
-            'house_id'=>'1',
-            'status'=>'1',
+             'status'=>'1',
             'name'=>'super admin',
             'image'=>null,
             'organization'=>'Shop',
@@ -35,8 +34,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'is_admin'=>'1',
             'is_super_admin'=>'0',
-            'house_id'=>'1',
-            'status'=>'1',
+             'status'=>'1',
             'name'=>'admin',
             'image'=>null,
             'organization'=>'Shop',
@@ -54,8 +52,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'is_admin'=>'0',
             'is_super_admin'=>'0',
-            'house_id'=>'1',
-            'status'=>'1',
+             'status'=>'1',
             'name'=>'user',
             'image'=>null,
             'organization'=>'Shop',
