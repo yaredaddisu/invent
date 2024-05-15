@@ -19,7 +19,7 @@ class Purchase extends Model
     'note',
     'purchases',
     'user_id',
-    'house_id',
+    //'house_id',
     'supplier_id',];
 
 

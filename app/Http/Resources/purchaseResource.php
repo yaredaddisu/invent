@@ -25,7 +25,7 @@ class purchaseResource extends JsonResource
                 'user_id' => $this->user_id,
                 //'creator' => $this->user,
                 'creator' => $this->user ?   $this->user->name   : null,
-                'warehouse' => $this->house ?   $this->house->name   : null,
+                //'warehouse' => $this->house ?   $this->house->name   : null,
 
                 //'warehouse' => $this->getWarehouseAttribute(),
 

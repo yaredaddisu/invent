@@ -37,7 +37,7 @@ class purchaseRequest extends FormRequest
             'user_id' => 'exists:users,id|required',
             'supplier_id' => 'exists:suppliers,id|required',
             'purchases' => 'array|required',
-            'house_id' => 'exists:warehouses,id',
+            //'house_id' => 'exists:warehouses,id',
 
         ];
     }
