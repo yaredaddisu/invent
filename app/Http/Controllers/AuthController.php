@@ -80,8 +80,8 @@ class AuthController extends Controller
 
 if ($date2 <= $date1) {
     // Expire the user's access
-    $user->day_left = null; // or any value that signifies expiration
-    $user->save();
+    // $user->day_left = null; // or any value that signifies expiration
+    // $user->save();
 
     // Perform any additional actions if needed, such as sending notifications
 
