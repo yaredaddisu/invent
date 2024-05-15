@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('organization');
 
             $table->rememberToken();
-            $table->foreignIdFor(Warehouse::class, 'house_id')->onDelete('cascade')->onUpdate('cascade')->nullable();
+            //$table->foreignIdFor(Warehouse::class, 'house_id')->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->date("day_left");
 
             $table->timestamps();

@@ -50,8 +50,7 @@ class User extends Authenticatable
         'address',
         'organization',
         'day_left',
-        'house_id',
-        'Vat',
+         'Vat',
         'Tin'
 
     ];

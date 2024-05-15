@@ -31,7 +31,7 @@ class UserManagmentRequest extends FormRequest
              'email'=>'email',
              'is_admin' => 'boolean',
              'status' => 'boolean',
-             'house_id' => 'required',
+            // 'house_id' => 'required',
              'password' => [
                 ['required','confirmed'  ],
                          Password::min(8)

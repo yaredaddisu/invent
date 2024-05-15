@@ -32,7 +32,7 @@ class UpdateManagmentRequest extends FormRequest
              'image' => 'string|nullable',
              'organization' => 'string|nullable',
 
-             'house_id' => 'required',
+             //'house_id' => 'required',
              'email' => Rule::unique('users')->ignore($this->id),
              'password' => ['confirmed ',Rule::unique('users')->ignore($this->id)],
              'is_admin' => 'required|boolean',
