@@ -37,7 +37,7 @@ class CreateBothsTable extends Migration
             $table->tinyInteger('updated')->default(0);
 
              $table->foreignIdFor(Survey::class, 'survey_id');
-            $table->foreignIdFor(Warehouse::class, 'house_id');
+            //$table->foreignIdFor(Warehouse::class, 'house_id');
             $table->timestamps();
         });
     }
