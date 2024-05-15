@@ -394,7 +394,7 @@ $car = $validator = Validator::make($data, [
     'user_id'=>'exists:App\Models\User,id',
     'survey_id' => 'exists:App\Models\Survey,id',
     'productName'=>'string',
-    'house_id'=>'exists:App\Models\Warehouse,id',
+    //'house_id'=>'exists:App\Models\Warehouse,id',
     'barCode'=>' ',
     'salesPrice'=>'numeric',
     'quantity'=>'numeric',
