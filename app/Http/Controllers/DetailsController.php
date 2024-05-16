@@ -135,7 +135,7 @@ class DetailsController extends Controller
 
             if ($cart['productQuantity'] < $cart['quantity']) {
                 return response([
-                    'error' => 'You dont have products in Stock'
+                    'error' => 'You do not have products in Stock'
                 ], 422);
 
             }else{
@@ -145,7 +145,7 @@ class DetailsController extends Controller
             }
             if($detail){
                 return response([
-                    'success' => 'Product was successfully Stockd Out '
+                    'success' => 'Product was successfully Stocked Out '
                 ], 200);
             }
 
@@ -190,7 +190,7 @@ class DetailsController extends Controller
         'user_id'=>'exists:App\Models\User,id',
         'survey_id' => 'exists:App\Models\Survey,id',
         'productName'=>'string',
-        'house_id'=>'exists:App\Models\Warehouse,id',
+        //'house_id'=>'exists:App\Models\Warehouse,id',
         'creator'=>'required',
         'barCode'=>' ',
         'salesPrice'=>'numeric',
