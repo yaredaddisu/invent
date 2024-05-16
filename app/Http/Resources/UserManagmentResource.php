@@ -25,7 +25,7 @@ class UserManagmentResource extends JsonResource
             'price' => $this->price,
             'priceUpdate' => $this->priceUpdate,
             'is_admin' => !!$this->is_admin,
-            'status' => $this->status,
+            'status' => !!$this->status,
             'is_super_admin' => !!$this->is_super_admin,
             'image_url' => $this->image ? URL::to($this->image) : null,
             'email' => $this->email,
