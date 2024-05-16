@@ -36,7 +36,7 @@ class UserManagmentRequest extends FormRequest
                 ['required','confirmed'  ],
                          Password::min(8)
                     ->letters()
-                    ->mixedCase()
+                    //->mixedCase()
                     ->numbers()
                    // ->symbols()
                     //->uncompromised()
