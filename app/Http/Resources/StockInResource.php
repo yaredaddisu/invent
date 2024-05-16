@@ -27,7 +27,7 @@ class StockInResource extends JsonResource
             'purchasePrice' => $this->purchasePrice,
             'salesPrice' => $this->salesPrice,
             'previous' =>$this->previous,
-            'updated' => $this->updated,
+            'updated' => !!$this->updated,
             'quantity' => $this->quantity,
             'remaining' =>$this->remaining,
             'Transaction' => $this->Transaction,

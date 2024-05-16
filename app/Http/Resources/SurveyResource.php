@@ -36,7 +36,7 @@ class SurveyResource extends JsonResource
             'category' =>$this->category ? $this->category : null,
            // 'category' => CategoryResource::collection($this->category),
             'quantity' => $this->quantity,
-            'status' => $this->status,
+            'status' => !!$this->status,
             'code' => $this->code,
             'size' => $this->size,
             'color' => $this->color,

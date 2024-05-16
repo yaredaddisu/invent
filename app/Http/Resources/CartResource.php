@@ -28,7 +28,7 @@ class CartResource extends JsonResource
             'quantity' => $this->quantity,
             'remaining' =>$this->remaining,
             'profit' => $this->profit,
-             'updated' => $this->updated,
+            'updated' => !!$this->updated,
             'totalStockOutPrice' => $this->totalStockOutPrice,
             'Transaction' => $this->Transaction,
             'cart_date' =>Carbon::parse($this->created_at)->toDateString(),
