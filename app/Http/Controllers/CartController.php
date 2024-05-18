@@ -107,19 +107,34 @@ class CartController extends Controller
     {
         $user = $request->user();
 
+        // $request->validate([
+        //     'start_date' => 'required|date',
+        //     'end_date' => 'required|date',
+        // ]);
+
+        // Retrieve products within the date range
+
+
+        //$products = Product::whereBetween('created_at', [$startDate, $endDate])->get();
+
+
                 $search = request('search', '');
                 $dateFilter = $request->keyword;
-
+                $startDate = $request->input('startDate');
+                $endDate = $request->input('endDate');
         $query = Both::query()
         ->where('user_id', $user->id)
         ->where('Transaction','=', 'Stock In')
-         ->where(function($query) use ($search){
+          ->where(function($query) use ($search){
             $query->where('productName', 'LIKE', '%'.$search.'%')
             ->orWhere('barCode','LIKE', '%'.$search.'%')
             ->orWhere('reference','LIKE', '%'.$search.'%');
 
             });
+            if ($startDate && $endDate) {
 
+                $query->whereBetween('created_at', [$startDate, $endDate]);
+            }
         switch($dateFilter){
                 case 'today':
                     $query->whereDate('created_at',Carbon::today());
