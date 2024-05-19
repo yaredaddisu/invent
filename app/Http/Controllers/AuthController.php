@@ -193,7 +193,7 @@ public function resetPassword(Request $request){
                 'required',
                 'confirmed',
                 Password::min(8)
-                    ->mixedCase()
+                   // ->mixedCase()
                     ->letters()
                     ->numbers()
                     //->symbols()
