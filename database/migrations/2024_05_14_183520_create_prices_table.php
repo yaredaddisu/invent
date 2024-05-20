@@ -17,6 +17,7 @@ class CreatePricesTable extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\User::class, 'user_id')->onDelete('cascade')->onUpdate('cascade');
             $table->longText('price')->nullable();
+            $table->longText('plan')->nullable();
 
             $table->timestamps();
         });

@@ -90,7 +90,7 @@ class UserManagement extends Controller
        ->paginate($perPage);
        return UserManagmentResource::collection($data);
   }else{
-    return response()->json("unautorized action", 400);
+    return response()->json("unauthorized action", 400);
   }
 
 }
@@ -296,11 +296,15 @@ public function updateDate  (Request $request )
        // Update other fields as needed
 
        $member->save();
+       if($request->price != 0){
+        $price = new Price();
+        $price->user_id = $member->id;
+        $price->price = $request->price;
+        $price->plan = $request->plan;
 
-       $price = new Price();
-       $price->user_id = $member->id;
-       $price->price = $request->price;
-       $price->save();
+        $price->save();
+       }
+
 
        return response()->json(['message' => 'Member updated successfully'], 200);
    }

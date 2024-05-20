@@ -48,7 +48,7 @@ class PaymentNotification extends Notification
      */
     public function toMail($notifiable)
     {
- 
+
 
 https://www.pipedrive.com/en/blog/9-most-common-transactional-email-templates-examples
         return (new MailMessage)
@@ -58,7 +58,7 @@ https://www.pipedrive.com/en/blog/9-most-common-transactional-email-templates-ex
         ->line('Payed amaunt')
         ->line('የተከፈለ መጠን')
         ->line('ETB '.$this->price )
-        ->action('Login', url('https://www.lomifera.com/#/login'))
+        ->action('Login', url('https://api.lomistock.com/#/login'))
         ->line('Thank you again for choosing  Lomi Website.
         ');
     }

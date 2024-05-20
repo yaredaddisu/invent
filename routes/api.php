@@ -13,6 +13,7 @@ use App\Http\Controllers\LineChartController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MergeReportsController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
@@ -36,6 +37,7 @@ use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\WorkController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -118,6 +120,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/sales-month', [SalesController::class, 'filterByMonth']);
     Route::resource('/sales', SalesController::class);
+    Route::resource('/user-payments', PaymentsController::class);
 
     Route::resource('/product-cart', CartController::class);
 
