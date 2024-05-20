@@ -21,7 +21,7 @@ class WelcomeEmailNotification extends Notification
     {
         $this->user = $user;
     }
-     
+
 
     /**
      * Get the notification's delivery channels.
@@ -34,14 +34,14 @@ class WelcomeEmailNotification extends Notification
         return ['mail'];
     }
 
-   
-    
+
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
                 ->greeting('Hello, '.$this->user->name)
                 ->line('Welcome to Lomi.')
-                ->action('Login', url(' https://www.lomifera.com/#/login'))
+                ->action('Login', url(' https://api.lomistock.com/#/login'))
                 ->line('Thank you for using our application!');
 }
 

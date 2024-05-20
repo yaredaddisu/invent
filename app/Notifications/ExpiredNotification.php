@@ -22,7 +22,7 @@ class ExpiredNotification extends Notification
     {
         $this->user = $user;
     }
-     
+
 
     /**
      * Get the notification's delivery channels.
@@ -46,7 +46,7 @@ class ExpiredNotification extends Notification
         return (new MailMessage)
                     ->line($this->user->name)
                     ->line('Your date is expired click the link below for pricing!')
-                    ->action('Click here for pricing', url('https://www.lomifera.com/#/lomi-price/'.$this->user->id))
+                    ->action('Click here for pricing', url('https://api.lomistock.com/#/lomi-price/'.$this->user->id))
                     ->line('Thank you for using our application!');
     }
 
