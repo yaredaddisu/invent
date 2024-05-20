@@ -145,7 +145,7 @@ if ($date2 <= $date1) {
     */
     $token = $user->createToken('main')->plainTextToken;
 
-   $user->notify(new WelcomeEmailNotification($user));
+   //$user->notify(new WelcomeEmailNotification($user));
 
     return response([
         'user' => $user,

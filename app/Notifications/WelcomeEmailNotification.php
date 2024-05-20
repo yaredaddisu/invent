@@ -41,7 +41,7 @@ class WelcomeEmailNotification extends Notification
         return (new MailMessage)
                 ->greeting('Hello, '.$this->user->name)
                 ->line('Welcome to Lomi.')
-                ->action('Login', url( ))
+                ->action('Login', url(' https://api.lomistock.com/#/login'))
                 ->line('Thank you for using our application!');
 }
 
