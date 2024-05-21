@@ -43,7 +43,42 @@ class ChartController extends Controller
                 break;
             case 'last_year':
                 $query->whereYear('created_at',Carbon::now()->subYear()->year);
-                break;
+                case 'january':
+                    $query->whereMonth('created_at', 1);
+                    break;
+                case 'february':
+                    $query->whereMonth('created_at', 2);
+                    break;
+                case 'march':
+                    $query->whereMonth('created_at', 3);
+                    break;
+                case 'april':
+                    $query->whereMonth('created_at', 4);
+                    break;
+                case 'may':
+                    $query->whereMonth('created_at', 5);
+                    break;
+                case 'june':
+                    $query->whereMonth('created_at', 6);
+                    break;
+                case 'july':
+                    $query->whereMonth('created_at', 7);
+                    break;
+                case 'august':
+                    $query->whereMonth('created_at', 8);
+                    break;
+                case 'september':
+                    $query->whereMonth('created_at', 9);
+                    break;
+                case 'october':
+                    $query->whereMonth('created_at', 10);
+                    break;
+                case 'november':
+                    $query->whereMonth('created_at', 11);
+                    break;
+                case 'december':
+                    $query->whereMonth('created_at', 12);
+                    break;
         }
 
 
